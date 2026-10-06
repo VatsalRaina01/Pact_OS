@@ -34,10 +34,10 @@ CREATE POLICY "Users can insert their own audit logs"
 
 -- Fast query optimization for active circle memberships
 CREATE INDEX IF NOT EXISTS idx_circle_members_user_status 
-    ON public.circle_members (user_id, status);
+    ON public.accountability_circle_members (user_id, status);
 
 CREATE INDEX IF NOT EXISTS idx_circle_members_circle_role 
-    ON public.circle_members (circle_id, role);
+    ON public.accountability_circle_members (circle_id, role);
 
 -- Fast lookup for pending charity pledges by status and deadline
 CREATE INDEX IF NOT EXISTS idx_charity_pledges_status_created 
